@@ -27,7 +27,7 @@ CREATE TABLE Transactions
   AccountID      INT            NOT NULL,
   FOREIGN KEY (AccountID) REFERENCES Accounts(ProductID)
 );
-
++
 INSERT INTO Transactions VALUES
 (1, 500.00, 'deposit', 3),
 (2, -200.00, 'withdrawl', 4),
