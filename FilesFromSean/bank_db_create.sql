@@ -10,7 +10,7 @@ CREATE TABLE Accounts
   AccountHolder  VARCHAR(20)    NOT NULL     UNIQUE,
   Balance        DECIMAL(10,2)  NOT NULL,
   Fees           DECIMAL(10,2)  NOT NULL
-);
+);accounts
 
 -- insert some rows into the Product table
 INSERT INTO Accounts VALUES
@@ -33,6 +33,12 @@ INSERT INTO Transactions VALUES
 (2, -200.00, 'withdrawl', 4),
 (3, 200.00, 'deposit', 4),
 (4, 248.00, 'deposit', 1);
+
+-- combine (concat) Balance and Fees
+SELECT 'Balances',
+	CONCAT('$', FORMAT(SUM(Balance), 2)) AS 'Balance Total',
+    CONCAT('$', FORMAT(SUM(Fees), 2)) AS 'Feed Total'
+    FROM Accounts;
 
 -- create a user and grant privileges to that user
 -- GRANT SELECT, INSERT, DELETE, UPDATE

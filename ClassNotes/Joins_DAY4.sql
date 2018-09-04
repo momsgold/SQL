@@ -20,4 +20,3 @@ SELECT AccountHolder, Balance, Fees, Amount, TransType
   LEFT OUTER JOIN Transactions -- don't need alias here
                ON accts.ProductID = AccountID;
                
-
