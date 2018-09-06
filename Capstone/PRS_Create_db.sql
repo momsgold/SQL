@@ -135,3 +135,7 @@ INSERT INTO product (ID, VendorID, PartNumber, Name, Price, Unit, PhotoPath) VAL
 -- MAKE user.email UNIQUE
 ALTER TABLE user
 ADD UNIQUE (Email);
+
+-- Grant statemene
+CREATE USER prs_user@localhost IDENTIFIED BY 'sesame';
+GRANT SELECT, INSERT, DELETE, UPDATE ON prs.* TO prs_user@localhost;
